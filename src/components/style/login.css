@@ -1,0 +1,31 @@
+.account {
+  width: 30%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.account a:nth-child(1) {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.account button {
+  width: 40%;
+  padding: 3% 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 3px solid white;
+  color: white;
+  background-color: #00adb5;
+  font-size: 20px;
+}
+
+.account input {
+  padding: 2% 0;
+}
+.theme h1 {
+  margin-top: 2%;
+}

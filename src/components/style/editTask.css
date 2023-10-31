@@ -1,0 +1,36 @@
+.edit_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.edit_box input {
+  width: 50%;
+}
+.edit_box button {
+  padding: 3% 5%;
+  margin: 2% 0;
+
+  background-color: #00adb5;
+  color: #eee;
+  border: 2px solid #eee;
+  font-size: 25px;
+
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s;
+}
+label {
+  display: flex;
+}
+.edit_box label input {
+  width: 25px;
+  height: 25px;
+}
+
+.edit_box button:hover {
+  background-color: #fff;
+  color: #00adb5;
+}

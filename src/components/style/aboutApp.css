@@ -1,0 +1,10 @@
+.describe {
+  width: 50%;
+}
+.describe h2 {
+  color: white;
+  text-align: center;
+}
+.describe span {
+  font-weight: bold;
+}

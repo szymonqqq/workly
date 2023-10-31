@@ -1,0 +1,42 @@
+.sort_box {
+  width: 50%;
+  height: 8vh;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2%;
+}
+.sort_box .dark {
+  width: 40%;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.sort_box select,
+.sort_box button {
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.sort_box button:nth-of-type(1) {
+  border-width: 2px 0;
+}
+.sort_box select {
+  width: 60%;
+  font-size: 20px;
+}
+select option {
+  background-color: rgba(0, 0, 0, 80%);
+}
+.sort_box button {
+  width: 20%;
+  transition: 0.2s;
+}
+.sort_box button i {
+  font-size: 30px;
+}
+.sort_box button:hover {
+  background-color: #fff;
+  color: black;
+}
