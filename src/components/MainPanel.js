@@ -6,6 +6,7 @@ import {
   faPersonRunning,
   faListCheck,
   faPen,
+  faGraduationCap,
 } from '@fortawesome/free-solid-svg-icons';
 import TaskPanel from './taskPanel';
 import { Routes, Route, Link } from 'react-router-dom';
@@ -32,6 +33,13 @@ const MainPanel = () => {
             <button className="box_activity ">
               <span>
                 <FontAwesomeIcon icon={faPen} />
+              </span>
+            </button>
+          </Link>
+          <Link to="/task_panel/flashcards">
+            <button className="box_activity ">
+              <span>
+                <FontAwesomeIcon icon={faGraduationCap} />
               </span>
             </button>
           </Link>

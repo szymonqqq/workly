@@ -12,6 +12,8 @@ import MainPanel from './components/MainPanel';
 import AddTraining from './components/AddTraining';
 import Note from './components/ShowNote';
 import ShowNote from './components/ShowNote';
+import AddFlashCards from './components/AddFlashcards';
+import ShowFlashCards from './components/ShowFlashcards';
 function App() {
   const [token, setToken] = useState('');
 
@@ -52,6 +54,8 @@ function App() {
           <Route path="/show_task" element={<ShowTask />} />
           <Route path="/register" element={<Register />} />
           <Route path="/main_panel" element={<MainPanel />} />
+          <Route path="/add_flashcards" element={<AddFlashCards />} />
+          <Route path="/show_flashcards" element={<ShowFlashCards />} />
           <Route
             path="/task_panel/training"
             element={<TaskPanel activity={['training', 'trening']} />}
@@ -63,6 +67,12 @@ function App() {
           <Route
             path="/task_panel/note"
             element={<TaskPanel activity={['note', 'notatkę', 'notatki']} />}
+          />
+          <Route
+            path="/task_panel/flashcards"
+            element={
+              <TaskPanel activity={['flashcards', 'fiszki', 'fiszka']} />
+            }
           />
           <Route path="/add_training" element={<AddTraining />} />
           <Route path="/show_note" element={<ShowNote />} />

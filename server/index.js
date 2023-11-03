@@ -287,5 +287,55 @@ app.delete('/del_note/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+const FleshCardsSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  data: {
+    type: Array,
+    required: true,
+  },
+  user_id: {
+    type: String,
+    required: true,
+  },
+});
+const flashCards = mongoose.model('FlashCards', FleshCardsSchema);
+app.post('/add_flashCards', async (req, res) => {
+  const { title, data, user_id } = req.body;
+  const newFlashCards = new flashCards({ title, data, user_id });
+  const savedNode = await newFlashCards.save();
+  res.status(201).json('dodano');
+});
+app.get('/get_flashCards', async (req, res) => {
+  const { id } = req.query;
 
+  try {
+    const flashcards = await flashCards.find({ id });
+    res.json(flashcards);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+app.put('/edit_flashCards', async (req, res) => {
+  const { id, title, data } = req.body;
+  try {
+    const result = await flashCards.findByIdAndUpdate(
+      id,
+      { title, data },
+      { new: true }
+    );
+
+    if (result) {
+      res.json('Pomyślnie zaktualizowano dane');
+    } else {
+      res.json('Nie udało się zaktualizować danych');
+    }
+  } catch (error) {
+    console.error('Błąd podczas aktualizacji danych:', error);
+    res.status(500).json('Błąd serwera');
+  }
+});
 app.listen(3001);
