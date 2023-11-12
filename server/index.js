@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const User = require('./schema/user');
 const Task = require('./schema/task');
+const Training = require('./schema/training');
+const Note = require('./schema/note');
+const FlashCards = require('./schema/flashcard');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 app.use(express.json());
 app.use(cors());
@@ -69,8 +71,8 @@ app.get('/tasks', async (req, res) => {
 app.put('/tasks/:id', async (req, res) => {
   const taskId = req.params.id;
 
-  console.log('Received task ID:', taskId); // Dodaj ten log
-  const updatedData = req.body; // Nowe dane zadania
+  console.log('Received task ID:', taskId);
+  const updatedData = req.body;
   try {
     const updatedTask = await Task.findByIdAndUpdate(taskId, updatedData, {
       new: true,
@@ -86,6 +88,7 @@ app.put('/tasks/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
+
 app.delete('/del_task/:id', async (req, res) => {
   const taskId = req.params.id;
 
@@ -139,21 +142,7 @@ app.post('/check_token', async (req, res) => {
     res.status(500).json({ error: 'Wystąpił błąd serwera' });
   }
 });
-const trainingSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  data: {
-    type: Object,
-    required: true,
-  },
-  user_id: {
-    type: String,
-    required: true,
-  },
-});
-const Training = mongoose.model('Training', trainingSchema);
+
 app.post('/add_training', async (req, res) => {
   const { title, data, user_id } = req.body;
 
@@ -209,30 +198,6 @@ app.delete('/del_training/:id', async (req, res) => {
   }
 });
 
-const NoteSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  text: {
-    type: String,
-    required: true,
-  },
-
-  date: {
-    type: String,
-    required: true,
-  },
-  hour: {
-    type: String,
-    required: true,
-  },
-  user_id: {
-    type: String,
-    required: true,
-  },
-});
-const Note = mongoose.model('Note', NoteSchema);
 app.post('/add_note', async (req, res) => {
   const { title, text, user_id, date, hour } = req.body;
   const newNode = new Note({ title, text, user_id, date, hour });
@@ -240,11 +205,11 @@ app.post('/add_note', async (req, res) => {
   res.status(201).json(savedNode);
 });
 app.get('/get_note', async (req, res) => {
-  const { id } = req.query;
+  const { user_id } = req.query;
 
   try {
-    const notes = await Note.find({ id });
-    console.log(notes);
+    const notes = await Note.find({ user_id });
+
     res.json(notes);
   } catch (error) {
     console.error(error);
@@ -287,32 +252,18 @@ app.delete('/del_note/:id', async (req, res) => {
     res.status(500).json({ message: 'Internal server error' });
   }
 });
-const FleshCardsSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-  },
-  data: {
-    type: Array,
-    required: true,
-  },
-  user_id: {
-    type: String,
-    required: true,
-  },
-});
-const flashCards = mongoose.model('FlashCards', FleshCardsSchema);
+
 app.post('/add_flashCards', async (req, res) => {
   const { title, data, user_id } = req.body;
-  const newFlashCards = new flashCards({ title, data, user_id });
+  const newFlashCards = new FlashCards({ title, data, user_id });
   const savedNode = await newFlashCards.save();
   res.status(201).json('dodano');
 });
 app.get('/get_flashCards', async (req, res) => {
-  const { id } = req.query;
-
+  const { user_id } = req.query;
+  console.log(user_id);
   try {
-    const flashcards = await flashCards.find({ id });
+    const flashcards = await FlashCards.find({ user_id });
     res.json(flashcards);
   } catch (error) {
     console.error(error);
@@ -322,7 +273,7 @@ app.get('/get_flashCards', async (req, res) => {
 app.put('/edit_flashCards', async (req, res) => {
   const { id, title, data } = req.body;
   try {
-    const result = await flashCards.findByIdAndUpdate(
+    const result = await FlashCards.findByIdAndUpdate(
       id,
       { title, data },
       { new: true }
@@ -338,4 +289,22 @@ app.put('/edit_flashCards', async (req, res) => {
     res.status(500).json('Błąd serwera');
   }
 });
+
+app.delete('/del_flashCard/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const deletedCards = await FlashCards.findByIdAndDelete(id);
+
+    if (!deletedCards) {
+      return res.status(404).json({ message: 'Note not found' });
+    }
+
+    res.json({ message: 'Note deleted successfully' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
 app.listen(3001);
