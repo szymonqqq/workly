@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style/sortTask.css';
+import '../style/sortTask.css';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const SortTask = ({ tasks, setTasks }) => {

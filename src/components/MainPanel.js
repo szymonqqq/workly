@@ -15,7 +15,7 @@ const MainPanel = () => {
     <div className="theme">
       <div className="activity">
         <div className="task">
-          <Link to="/add_training">
+          <Link to="/training/add_training">
             <button className="box_activity ">
               <span>
                 <FontAwesomeIcon icon={faPersonRunning} />

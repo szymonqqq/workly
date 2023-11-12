@@ -1,11 +1,9 @@
 import React from 'react';
 import './style/taskPanel.css';
-import AddTask from './addTask';
-import ShowTask from './showTask';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { act } from 'react-dom/test-utils';
+
 const TaskPanel = ({ activity }) => {
   return (
     <>

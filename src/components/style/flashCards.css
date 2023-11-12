@@ -122,29 +122,36 @@ button {
 }
 .flashCard_box {
   width: 50%;
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .flashCard_box .card {
   width: 80%;
-  height: 50%;
+  height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
   border-radius: 20px;
+  overflow: auto;
+  cursor: pointer;
 }
+::-webkit-scrollbar {
+  border-radius: 38px;
+}
+
 .flashCard_box .card h1 {
   color: black;
   text-align: center;
+  word-break: break-all;
+  margin: 10px 0px 10px 10px;
 }
 .flashCard_box button {
   height: 5%;
   width: 30%;
 }
-.flashCard_box div:nth-last-of-type(1) {
+.flashCard_box .btn_box_flashCard {
   display: flex;
   height: 6vh;
   margin-top: 5%;
@@ -161,4 +168,45 @@ button {
 .flashCard_box .rotate {
   width: 20%;
   margin-top: 5%;
+}
+.test_box {
+  flex-direction: column;
+  width: 70%;
+  height: auto;
+}
+.test_box div {
+  display: flex;
+  width: 100%;
+  margin: 2% 0;
+}
+.test_box div input {
+  width: 60%;
+  margin: 0;
+}
+.test_box div p {
+  width: 40%;
+}
+.flashCard_box .start_test {
+  width: 20%;
+  align-self: start;
+  margin: 2% 10%;
+}
+.test_box .btn_box_flashCard {
+  width: 100%;
+}
+.test_box .btn_box_flashCard button {
+  width: 45%;
+}
+.test_box .btn_box_flashCard p {
+  width: 10%;
+  text-align: center;
+}
+.card_data_box .dark {
+  justify-content: space-between;
+}
+.card_data_box .delete_note {
+  font-size: 30px;
+  width: 8vh;
+  height: 8vh;
+  align-self: right;
 }

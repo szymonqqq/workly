@@ -21,7 +21,11 @@ const ShowFlashCards = () => {
   return (
     <div className="theme">
       {data.length === 0 ? (
-        <RenderLabelFlashCards datas={dbData} setData={setData} />
+        <RenderLabelFlashCards
+          datas={dbData}
+          setData={setData}
+          getFlashCards={() => getFlashCards(cookies.user_id, setDbData)}
+        />
       ) : (
         <FlashCardKit
           data={data.data}

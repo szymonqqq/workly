@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import GenerateRow from './generateRow';
-import './style/addTraining.css';
+import '../style/addTraining.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';

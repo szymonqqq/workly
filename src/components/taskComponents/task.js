@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import EditTask from './editTask';
-import './style/task.css';
+import '../style/task.css';
 import {
   faInfo,
   faPenToSquare,
   faTrash,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ReturnInfo from './returnInfo';
+import ReturnInfo from '../returnInfo';
 
 import axios from 'axios';
 const Task = ({ data, fetchTasks }) => {

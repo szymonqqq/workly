@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Note from './Note';
 import axios from 'axios';
-import './style/note.css';
+import '../style/note.css';
 import { useCookies } from 'react-cookie';
 import RenderLabelNote from './RenderLabelNote';
-import ReturnInfo from './returnInfo';
+import ReturnInfo from '../returnInfo';
 const ShowNote = () => {
   const [showNote, setShowNote] = useState(false);
   const [cookies] = useCookies(['user_id']);
@@ -12,10 +12,11 @@ const ShowNote = () => {
   const [data, setData] = useState();
   const [message, setMessage] = useState();
   const getNote = async () => {
+    const id = cookies.user_id;
     try {
-      const response = await axios.get('http://localhost:3001/get_note', {
-        id: cookies.user_id,
-      });
+      const response = await axios.get(
+        `http://localhost:3001/get_note?user_id=${id}`
+      );
 
       setDatas(response.data);
       console.log(response.data);

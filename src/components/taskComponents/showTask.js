@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Task from './task.js';
-import './style/showTask.css';
+import '../style/showTask.css';
 import SortTask from './sortTask.js';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';

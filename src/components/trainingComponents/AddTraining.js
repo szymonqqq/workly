@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import ReturnInfo from './returnInfo';
+import ReturnInfo from '../returnInfo';
 const AddTraining = () => {
   const [optionValue, setOptionValue] = useState('', 0);
   const [previousData, setPreviousData] = useState([]);

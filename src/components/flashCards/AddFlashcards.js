@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './style/flashCards.css';
+import '../style/flashCards.css';
 import React, { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { getFlashCards } from './getFlashCards';

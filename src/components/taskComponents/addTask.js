@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './style/addTask.css';
+import '../style/addTask.css';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
-import ReturnInfo from './returnInfo';
+import ReturnInfo from '../returnInfo';
 
 const date = new Date();
 const setDate = new Date().toISOString().slice(0, 10);
