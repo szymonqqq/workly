@@ -64,7 +64,7 @@ const AddTraining = () => {
 
   const editData = async () => {
     const id = previousData[optionValue[1]]._id;
-    console.log(data);
+
     try {
       const response = await axios.put('http://localhost:3001/edit_training', {
         id: id,

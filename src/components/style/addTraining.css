@@ -1,8 +1,8 @@
 .training_box {
   width: 60%;
   text-align: center;
-  height: 90vh;
   box-sizing: border-box;
+  margin-bottom: 5%;
 }
 .training_box .plan {
   display: flex;
@@ -103,8 +103,12 @@
   border: none;
   border-bottom: 1px solid #fff;
   background-color: rgba(0, 0, 0, 30%);
+  cursor: pointer;
+  transition: 0.2s;
 }
-
+.plan_description button:hover {
+  background-color: rgba(0, 0, 0, 40%);
+}
 .functional_button {
   width: 5%;
   height: 6vh;
