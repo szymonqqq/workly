@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../style/editTask.css';
 import axios from 'axios';
-import ReturnInfo from '../returnInfo';
-const EditTask = ({ data, changeEdit, turnEdit, fetchTasks }) => {
+const EditTask = ({ data, changeEdit, turnEdit }) => {
   const { taskName, startDate, endDate, priority, description, _id } = data;
   const [editTaskName, setTaskName] = useState(taskName);
   const [editStartDate, setStartDate] = useState(startDate);

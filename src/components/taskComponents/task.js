@@ -23,8 +23,8 @@ const Task = ({ data, fetchTasks }) => {
     } catch (error) {
       console.error('Błąd podczas usuwania zadania:', error);
     }
-    setMessage(`Zadanie ${taskName} usunięto pomyślnie!`);
-    setTimeout(() => fetchTasks(), 2500);
+
+    fetchTasks();
   };
 
   const handleMouseEnter = (e) => {
