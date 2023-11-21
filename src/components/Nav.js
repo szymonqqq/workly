@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import TaskPanel from './taskPanel';
 import AboutApp from './aboutApp';
@@ -11,36 +11,58 @@ import AddFlashCards from './flashCards/AddFlashcards';
 import ShowFlashCards from './flashCards/ShowFlashcards';
 import AddTraining from './trainingComponents/AddTraining';
 import ShowNote from './notes/ShowNote';
-
-const App = ({ token, setToken }) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+const Nav = ({ token, setToken }) => {
+  const [device, setDevice] = useState('pc');
+  const [menu, setMenu] = useState(false);
+  useEffect(() => {
+    window.innerWidth <= 1080 ? setDevice('mobile') : setDevice('pc');
+  }, [window.innerWidth]);
   return (
     <>
       <Router>
         <nav>
           <h1>workly</h1>
-          <ul>
-            <li>
-              {' '}
-              <Link to={token ? '/main_panel/' : 'login'}>Panel</Link>
-            </li>
-            <li>
-              {' '}
-              <Link to="/about_app">o aplikacji</Link>
-            </li>
-            {token ? (
-              <li onClick={() => setToken(false)}>
-                {' '}
-                <Link to="/login"> wyloguj </Link>
-              </li>
-            ) : (
-              <li>
-                {' '}
-                <Link to="/login">zaloguj</Link>
-              </li>
+          {device === 'mobile' && (
+            <button
+              onClick={() => setMenu(!menu)}
+              className={menu ? 'close_menu' : 'menu_icon'}
+            >
+              <FontAwesomeIcon icon={faBars} />
+            </button>
+          )}
+          <ul
+            className={
+              device === 'mobile'
+                ? menu
+                  ? 'mobile_nav'
+                  : 'close_mobile_nav'
+                : 'pc_nav'
+            }
+            onClick={() => setMenu(false)}
+          >
+            {(menu || device === 'pc') && (
+              <>
+                <li>
+                  <Link to={token ? '/main_panel/' : '/login'}>Panel</Link>
+                </li>
+                <li>
+                  <Link to="/about_app">O aplikacji</Link>
+                </li>
+                {token ? (
+                  <li onClick={() => setToken(false)}>
+                    <Link to="/login">Wyloguj</Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link to="/login">Zaloguj</Link>
+                  </li>
+                )}
+              </>
             )}
           </ul>
         </nav>
-
         <Routes>
           <Route path="/task" element={<TaskPanel />} />
           <Route path="/about_app" element={<AboutApp />} />
@@ -69,4 +91,4 @@ const App = ({ token, setToken }) => {
     </>
   );
 };
-export default App;
+export default Nav;

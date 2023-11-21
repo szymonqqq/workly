@@ -3,8 +3,10 @@ import RenderLabelFlashCards from './RenderLabelFlashCards';
 import { getFlashCards } from './getFlashCards';
 import { useCookies } from 'react-cookie';
 import FlashCardKit from './FlashCardKit';
+import ReturnInfo from '../returnInfo';
 
 const ShowFlashCards = () => {
+  const [message, setMessage] = useState('');
   const [dbData, setDbData] = useState([]);
   const [data, setData] = useState([]);
   const [cookies] = useCookies(['user_id']);
@@ -20,11 +22,13 @@ const ShowFlashCards = () => {
   };
   return (
     <div className="theme">
+      {message && <ReturnInfo info={message} setMessage={setMessage} />}
       {data.length === 0 ? (
         <RenderLabelFlashCards
           datas={dbData}
           setData={setData}
           getFlashCards={() => getFlashCards(cookies.user_id, setDbData)}
+          setMessage={setMessage}
         />
       ) : (
         <FlashCardKit

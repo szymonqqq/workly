@@ -3,12 +3,18 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const RenderLabelFlashCards = ({ datas, setData, getFlashCards }) => {
+const RenderLabelFlashCards = ({
+  datas,
+  setData,
+  getFlashCards,
+  setMessage,
+}) => {
   const deleteFlashCard = async (data) => {
     try {
       const response = await axios.delete(
         `http://localhost:3001/del_flashCard/${data}`
       );
+      setMessage('Pomyślnie usunięto zestaw!');
       getFlashCards();
     } catch (error) {
       console.log(data);

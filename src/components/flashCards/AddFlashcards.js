@@ -11,6 +11,7 @@ import {
   faTrash,
   faFloppyDisk,
 } from '@fortawesome/free-solid-svg-icons';
+import ReturnInfo from '../returnInfo';
 const AddFlashCards = () => {
   const [title, setTitle] = useState('');
   const [countCards, setCountCards] = useState(5);
@@ -21,7 +22,7 @@ const AddFlashCards = () => {
   const [method, setMethod] = useState('add');
   const [canImport, setCanImport] = useState(false);
   const [cookies] = useCookies(['user_id']);
-
+  const [message, setMessage] = useState('');
   useEffect(() => {
     const newData = data;
     newData[countCards] = [[''], ['']];
@@ -72,6 +73,7 @@ const AddFlashCards = () => {
           user_id,
         }
       );
+      setMessage('Pomyślnie dodano zestaw!');
     } catch {
       console.log('bład w dodawaniu');
     }
@@ -86,6 +88,7 @@ const AddFlashCards = () => {
           data,
         }
       );
+      setMessage('Pomyślnie zedytowano zestaw!');
     } catch {
       console.log('bład w dodawaniu');
     }
@@ -93,6 +96,7 @@ const AddFlashCards = () => {
 
   return (
     <div className="theme">
+      {message && <ReturnInfo info={message} setMessage={setMessage} />}
       <div className="flash_cards">
         <div className="operation_box">
           {method === 'edit' ? (

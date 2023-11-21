@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className="theme">
       {info && <ReturnInfo info={info} setMessage={setInfo} />}
-      <h1>Logowanie</h1>
+      <h1 className="text_login">Logowanie</h1>
       <div className="account">
         <label htmlFor="username">Nazwa użytkownika</label>{' '}
         <input
@@ -54,7 +54,7 @@ const Login = () => {
           id="user_password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <p>
+        <p className="or_register">
           Jeśli nie posiadasz konta <Link to="/register">kliknij</Link>{' '}
           {cookies.user}
         </p>

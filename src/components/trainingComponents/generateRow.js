@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 const GenerateRow = ({ text, setText, index, packText }) => {
+  const [countRow, setCountRow] = useState(1);
   const [insideText, setInsideText] = useState(text);
+  useEffect(() => {
+    setInsideText(text);
+  }, [text]);
+  useEffect(() => {
+    const unPack = [...packText];
+    unPack[index] = insideText;
+    setText(unPack);
+  }, [insideText]);
 
   const handleInputChange = (e, i) => {
     const updatedInsideText = [...insideText];
@@ -9,22 +18,29 @@ const GenerateRow = ({ text, setText, index, packText }) => {
     setInsideText(updatedInsideText);
   };
 
-  const rows = insideText.map((value, i) => (
-    <div key={i}>
-      <input
-        type="text"
-        onChange={(e) => handleInputChange(e, i)}
-        value={value}
-      />
-    </div>
-  ));
+  const rows = [];
+  useEffect(() => {
+    setCountRow(insideText.length);
+  }, [insideText]);
+
+  for (let i = 0; i < countRow; i++) {
+    rows.push(
+      <div key={i}>
+        <input
+          type="text"
+          onChange={(e) => handleInputChange(e, i)}
+          value={insideText[i]}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="plan_description">
       <div>{rows}</div>
       <button
         onClick={() => {
-          setInsideText([...insideText, '']);
+          setCountRow(countRow + 1);
         }}
       >
         +
