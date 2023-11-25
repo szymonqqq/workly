@@ -37,9 +37,36 @@
 .activity a {
   margin: 0 5%;
 }
+
 @media only screen and (max-width: 1080px) {
+  .activity {
+    height: auto;
+  }
+  .activity .task {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
   .box_activity {
-    width: 18vw;
-    height: 18vw;
+    width: 30vh;
+    height: 30vh;
+    margin: 10% 0;
+  }
+  .box_activity span {
+    font-size: 220px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box_activity span {
+    font-size: 130px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .box_activity {
+    width: 28vh;
+    height: 28vh;
+  }
+  .box_activity span {
+    font-size: 80px;
   }
 }
