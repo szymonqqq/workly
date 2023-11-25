@@ -79,9 +79,12 @@ nav h1 {
   }
 }
 @media only screen and (max-width: 1366px) {
+  nav {
+    padding: 2%;
+  }
   nav h1 {
     margin: 0;
-    /* margin-top: 2%; */
+
     padding-left: 6%;
   }
   .theme h1 {
@@ -174,5 +177,46 @@ nav h1 {
   .close_menu,
   .menu_icon {
     z-index: 2;
+  }
+  .close_menu {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  nav h1 {
+    font-size: 55px;
+  }
+  .menu_icon {
+    font-size: 55px;
+    right: 2%;
+    margin-top: 1%;
+  }
+  .mobile_nav {
+    height: 50%;
+  }
+  .mobile_nav li a {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  nav h1 {
+    font-size: 30px;
+  }
+  .menu_icon {
+    font-size: 32px;
+    right: 4%;
+    margin-top: 0;
+  }
+  .mobile_nav {
+    height: 50%;
+  }
+  .mobile_nav li a {
+    font-size: 30px;
+  }
+  .close_menu {
+    margin: 2% 4% 0 0;
   }
 }

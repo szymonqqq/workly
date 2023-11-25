@@ -12,13 +12,16 @@ import ShowFlashCards from './flashCards/ShowFlashcards';
 import AddTraining from './trainingComponents/AddTraining';
 import ShowNote from './notes/ShowNote';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 const Nav = ({ token, setToken }) => {
   const [device, setDevice] = useState('pc');
   const [menu, setMenu] = useState(false);
   useEffect(() => {
-    window.innerWidth <= 1080 ? setDevice('mobile') : setDevice('pc');
-  }, [window.innerWidth]);
+    window.addEventListener('resize', () =>
+      window.innerWidth <= 1080 ? setDevice('mobile') : setDevice('pc')
+    );
+  }, []);
+
   return (
     <>
       <Router>
@@ -29,7 +32,11 @@ const Nav = ({ token, setToken }) => {
               onClick={() => setMenu(!menu)}
               className={menu ? 'close_menu' : 'menu_icon'}
             >
-              <FontAwesomeIcon icon={faBars} />
+              {menu ? (
+                <FontAwesomeIcon icon={faXmark} />
+              ) : (
+                <FontAwesomeIcon icon={faBars} />
+              )}
             </button>
           )}
           <ul

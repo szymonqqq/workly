@@ -21,8 +21,8 @@ const AddTask = () => {
 
   const handleAddTask = async () => {
     if (taskName === '') return setMessage('Uzupełnij dane!');
-    else if (taskName.length > 20)
-      return setMessage('Zbyt długa nazwa maksymalna długość to 20 znaków.');
+    else if (taskName.length > 40)
+      return setMessage('Zbyt długa nazwa maksymalna długość to 40 znaków.');
 
     try {
       const response = await axios.post('http://localhost:3001/add_task', {

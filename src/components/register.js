@@ -29,7 +29,7 @@ const Register = () => {
     <div className="theme">
       {console.log(message)}
       {message && <ReturnInfo message={message} setMessage={setMessage} />}
-      <h1>Rejestracja</h1>
+      <h1 className="register_name">Rejestracja</h1>
       <div className="account">
         <label htmlFor="username">Nazwa użytkownika</label>{' '}
         <input
