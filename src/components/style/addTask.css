@@ -119,3 +119,76 @@ p {
 .priority {
   line-height: 25px;
 }
+@media only screen and (max-width: 1080px) {
+  .task_box {
+    width: 100%;
+    border-radius: unset;
+    border: none;
+    height: 90vh;
+    margin-top: 0;
+    background-image: none;
+  }
+  input,
+  textarea {
+    width: 90%;
+    font-size: 50px;
+  }
+  .datebox input {
+    width: 43%;
+  }
+  .task_box label {
+    margin: 8%;
+    font-size: 60px;
+  }
+  #priority {
+    width: 40px;
+    height: 40px;
+  }
+  .task_box textarea {
+    height: 40%;
+  }
+  .button_box {
+    width: 94%;
+    height: 8%;
+  }
+  .button_box button {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  input,
+  textarea {
+    font-size: 30px;
+  }
+  .theme h1 {
+    margin: 3% 0;
+  }
+  .task_box label {
+    font-size: 45px;
+  }
+  #priority {
+    width: 35px;
+    height: 35px;
+  }
+  .button_box button {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  input,
+  textarea,
+  .button_box button {
+    font-size: 15px;
+  }
+  .task_box label {
+    font-size: 25px;
+  }
+  #priority {
+    width: 20px;
+    height: 20px;
+  }
+  .theme h1 {
+    margin: 2% 0 8%;
+  }
+}
