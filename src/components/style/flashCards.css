@@ -211,3 +211,161 @@ button {
   height: 8vh;
   align-self: right;
 }
+
+@media only screen and (max-width: 1080px) {
+  .flash_cards {
+    width: 95%;
+  }
+  .flash_cards .operation_box {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .flash_cards .operation_box .functional_button {
+    width: calc(100% / 3);
+  }
+  .flash_cards .operation_box .edit_btn,
+  .flash_cards .title {
+    width: 100%;
+    height: 6vh;
+  }
+  .flash_cards div .add_element,
+  .flash_cards div .save_flash_card {
+    width: 50%;
+    margin: 0;
+  }
+  .operation_box select,
+  button {
+    width: 100%;
+    height: 6vh;
+    font-size: 50px;
+  }
+  .value_card_box {
+    flex-direction: column;
+    margin: 4% 0;
+  }
+  .value_card_box input {
+    width: 100%;
+    margin: 1% 0;
+  }
+  .card_data_box {
+    width: 95%;
+  }
+  .task_value .dark {
+    flex-direction: row;
+    align-items: center;
+  }
+  .card_data_box .dark h1 {
+    font-size: 60px;
+    width: 70%;
+  }
+  .card_data_box .delete_note {
+    font-size: 65px;
+  }
+  .flashCard_box {
+    width: 100%;
+  }
+  .flashCard_box .card {
+    width: 95%;
+    height: 35vh;
+  }
+  .flashCard_box .start_test {
+    margin: 5% 3%;
+  }
+  .functional_button {
+    font-size: 50px;
+  }
+  .flashCard_box .rotate {
+    width: 40%;
+  }
+  .flashCard_box .btn_box_flashCard {
+    width: 95%;
+  }
+  .flashCard_box div:nth-last-of-type(1) p {
+    font-size: 60px;
+  }
+  .test_box {
+    width: 95%;
+  }
+  .test_box div {
+    flex-direction: column;
+
+    margin: 5% 0;
+  }
+  .test_box div input {
+    width: 100%;
+  }
+  .flashCard_box .btn_box_flashCard {
+    width: 100%;
+    flex-direction: row;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .functional_button,
+  input,
+  textarea,
+  .functional_button {
+    font-size: 35px;
+  }
+  .card_data_box .dark h1 {
+    font-size: 50px;
+  }
+  .card_data_box .delete_note {
+    width: 9vh;
+    height: 9vh;
+  }
+  .flashCard_box .btn_box_flashCard {
+    height: 6vh;
+    margin: 5% 0;
+  }
+  .btn_box_flashCard .functional_button {
+    height: 100%;
+  }
+  .flashCard_box button {
+    height: 6vh;
+  }
+  .flashCard_box div:nth-last-of-type(1) p {
+    font-size: 50px;
+  }
+  .flashCard_box .card {
+    height: 33vh;
+  }
+  .flashCard_box .card h1 {
+    font-size: 70px;
+  }
+  .flashCard_box div:nth-last-of-type(1) p {
+    font-size: 50px;
+  }
+  .card_data_box .dark h1 {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .functional_button,
+  input,
+  textarea,
+  .functional_button {
+    font-size: 2px;
+  }
+  .card_data_box .dark h1 {
+    font-size: 25px;
+  }
+  .card_data_box .delete_note {
+    font-size: 20px;
+  }
+  .flashCard_box .card h1 {
+    font-size: 40px;
+  }
+  .functional_button,
+  .training_box .plan .name input,
+  .plan_description input {
+    font-size: 15px;
+  }
+  .flashCard_box div:nth-last-of-type(1) p {
+    font-size: 20px;
+  }
+  .flashCard_box .start_test {
+    width: 25%;
+  }
+}

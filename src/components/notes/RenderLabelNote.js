@@ -13,7 +13,7 @@ const RenderLabelNote = ({
   const deleteNote = async (data) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/del_note/${data}`
+        `${process.env.REACT_APP_API_URL}del_note/${data}`
       );
       setMessage('Notatkę pomyślnie usunięto');
       getNote();

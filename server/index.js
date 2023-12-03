@@ -10,7 +10,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 app.use(express.json());
 app.use(cors());
-
+const bcrypt = require('bcrypt');
 mongoose
   .connect(
     'mongodb+srv://szymonklam17:f01qflDRd98I8TiQ@cluster0.xwqkqzv.mongodb.net/workly',
@@ -26,8 +26,10 @@ Task.createIndexes();
 
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
+
   try {
-    const newUser = new User({ username, password });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
     res.status(201).json(newUser);
   } catch (error) {
@@ -115,7 +117,8 @@ app.post('/login', async (req, res) => {
     if (!user) {
       return res.status(401).json({ error: 'Nieprawna nazwa' });
     }
-    if (user.password !== password) {
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
       return res.status(401).json({ error: 'Nieprawne hasło' });
     }
     token = jwt.sign(

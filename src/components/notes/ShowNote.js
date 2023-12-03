@@ -15,7 +15,7 @@ const ShowNote = () => {
     const id = cookies.user_id;
     try {
       const response = await axios.get(
-        `http://localhost:3001/get_note?user_id=${id}`
+        `${process.env.REACT_APP_API_URL}get_note?user_id=${id}`
       );
 
       setDatas(response.data);

@@ -19,7 +19,7 @@ const Task = ({ data, fetchTasks }) => {
 
   const deleteTask = async (e) => {
     try {
-      await axios.delete(`http://localhost:3001/del_task/${_id}`);
+      await axios.delete(`${process.env.REACT_APP_API_URL}del_task/${_id}`);
     } catch (error) {
       console.error('Błąd podczas usuwania zadania:', error);
     }

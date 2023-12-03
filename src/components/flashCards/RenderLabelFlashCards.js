@@ -12,7 +12,7 @@ const RenderLabelFlashCards = ({
   const deleteFlashCard = async (data) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3001/del_flashCard/${data}`
+        `${process.env.REACT_APP_API_URL}del_flashCard/${data}`
       );
       setMessage('Pomyślnie usunięto zestaw!');
       getFlashCards();

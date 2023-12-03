@@ -66,7 +66,7 @@ const AddFlashCards = () => {
     try {
       const user_id = cookies.user_id;
       const response = await axios.post(
-        'http://localhost:3001/add_flashCards',
+        `${process.env.REACT_APP_API_URL}add_flashCards`,
         {
           title,
           data,
@@ -81,7 +81,7 @@ const AddFlashCards = () => {
   const editFleshCards = async () => {
     try {
       const response = await axios.put(
-        'http://localhost:3001/edit_flashCards',
+        `${process.env.REACT_APP_API_URL}edit_flashCards`,
         {
           id: dbData[selectedIndex]._id,
           title,
@@ -136,6 +136,7 @@ const AddFlashCards = () => {
               setTitle('');
               setDbData([]);
               setMethod('add');
+              console.log(process.env.REACT_APP_API_URL);
             }}
           >
             +

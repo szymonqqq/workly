@@ -41,7 +41,7 @@ const GenerateColumn = ({
     console.log(prevData);
     try {
       const response = await axios.delete(
-        `http://localhost:3001/del_training/${prevData._id}`
+        `${process.env.REACT_APP_API_URL}del_training/${prevData._id}`
       );
 
       generatePrevData();

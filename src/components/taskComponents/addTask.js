@@ -25,14 +25,17 @@ const AddTask = () => {
       return setMessage('Zbyt długa nazwa maksymalna długość to 40 znaków.');
 
     try {
-      const response = await axios.post('http://localhost:3001/add_task', {
-        taskName: taskName,
-        startDate: startDate,
-        endDate: endDate,
-        priority: priority,
-        description: description ? description : 'Brak opisu',
-        user_id: cookies.user_id,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}add_task`,
+        {
+          taskName: taskName,
+          startDate: startDate,
+          endDate: endDate,
+          priority: priority,
+          description: description ? description : 'Brak opisu',
+          user_id: cookies.user_id,
+        }
+      );
     } catch (error) {
       setMessage('Nie udało się dodać zadania ');
     }

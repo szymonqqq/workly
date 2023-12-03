@@ -18,13 +18,16 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
   const saveData = async () => {
     const { title, text, date, hour } = getData();
     try {
-      const response = await axios.post('http://localhost:3001/add_note', {
-        title,
-        text,
-        date,
-        hour,
-        user_id: cookies.user_id,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}add_note`,
+        {
+          title,
+          text,
+          date,
+          hour,
+          user_id: cookies.user_id,
+        }
+      );
       setMessage('Notatkę pomyślnie dodano!');
     } catch (error) {
       console.log(error);
@@ -33,13 +36,16 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
   const editData = async () => {
     const { title, text, date, hour } = getData();
     try {
-      const response = await axios.put('http://localhost:3001/edit_note', {
-        id: data._id,
-        title,
-        text,
-        date,
-        hour,
-      });
+      const response = await axios.put(
+        `${process.env.REACT_APP_API_URL}edit_note`,
+        {
+          id: data._id,
+          title,
+          text,
+          date,
+          hour,
+        }
+      );
       setMessage('Notatkę pomyślnie edytowano!');
     } catch (error) {
       console.log(error);

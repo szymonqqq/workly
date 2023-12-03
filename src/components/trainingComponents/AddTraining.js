@@ -31,7 +31,7 @@ const AddTraining = () => {
   const generatePrevData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/trainings?user_id=${cookies.user_id}`
+        `${process.env.REACT_APP_API_URL}trainings?user_id=${cookies.user_id}`
       );
       if (!response.ok) {
         setMessage('Wystąpił błąd z połączeniem!');
@@ -51,11 +51,14 @@ const AddTraining = () => {
 
   const addData = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/add_training', {
-        title: title,
-        data: data,
-        user_id: cookies.user_id,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}add_training`,
+        {
+          title: title,
+          data: data,
+          user_id: cookies.user_id,
+        }
+      );
       setMessage('Pomyślnie dodano plan treningowy!');
     } catch (error) {
       setMessage('Błąd dodawania danych!');
@@ -66,11 +69,14 @@ const AddTraining = () => {
     const id = previousData[optionValue[1]]._id;
 
     try {
-      const response = await axios.put('http://localhost:3001/edit_training', {
-        id: id,
-        data: data,
-        title: title,
-      });
+      const response = await axios.put(
+        `${process.env.REACT_APP_API_URL}edit_training`,
+        {
+          id: id,
+          data: data,
+          title: title,
+        }
+      );
     } catch (error) {
       setMessage('Błąd aktualizacji danych!');
     }

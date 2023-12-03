@@ -11,10 +11,13 @@ const Register = () => {
     if (!username) return setMessage('Podaj nazwę użytkownika!');
     if (password !== password2) return setMessage('Hasła są niezgodne!');
     try {
-      const response = await axios.post('http://localhost:3001/register', {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL}register`,
+        {
+          username: username,
+          password: password,
+        }
+      );
 
       window.history.pushState(null, '', '/login');
 

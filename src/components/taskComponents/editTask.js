@@ -20,7 +20,7 @@ const EditTask = ({ data, changeEdit, turnEdit }) => {
       description: editDescription,
     };
 
-    axios.put(`http://localhost:3001/tasks/${_id}`, updatedData);
+    axios.put(`${process.env.REACT_APP_API_URL}tasks/${_id}`, updatedData);
     setMessage('Zadanie zostało zaktualizowane.');
 
     changeEdit(!turnEdit);

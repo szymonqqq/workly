@@ -8,13 +8,16 @@ const CheckToken = ({ setToken }) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/check_token', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ access }),
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_API_URL}check_token`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ access }),
+          }
+        );
 
         if (response.status === 200) {
           const data = await response.json();
