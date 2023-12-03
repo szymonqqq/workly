@@ -103,3 +103,110 @@
   display: block;
   white-space: 'pre-line';
 }
+@media only screen and (max-width: 1080px) {
+  .task_value,
+  .task_value .dark {
+    min-height: 10vh;
+  }
+  .task_value p {
+    align-self: center;
+    font-size: 60px;
+  }
+  .task_value .dark .data {
+    width: 45%;
+  }
+
+  .dark .data button {
+    width: 120px;
+    height: 120px;
+    font-size: 45px;
+  }
+  .info_about_element {
+    z-index: 4;
+    width: 50%;
+    top: 0;
+  }
+  .info_about_element .dark h1 {
+    font-size: 30px;
+  }
+  .info_about_element .dark p {
+    font-size: 25px;
+  }
+  .operation_box select,
+  button {
+    width: 40%;
+  }
+  .edit_box button {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  .task {
+    flex-direction: column;
+  }
+  .task .box,
+  .box_activity {
+    margin: 0;
+    font-size: 80px;
+    width: 38vh;
+    height: 38vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .task_value,
+  .task_value .dark {
+    min-height: 15vh;
+  }
+  .task_value p {
+    font-size: 50px;
+  }
+  .dark .data button {
+    font-size: 40px;
+    width: 90px;
+    height: 90px;
+  }
+  .edit_box button {
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .task_value p {
+    font-size: 25px;
+    text-align: center;
+  }
+  .dark .data button {
+    width: 33%;
+    height: 50px;
+    font-size: 20px;
+  }
+  .task_value .dark {
+    padding: 10px 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .task_value .dark .data {
+    width: 80%;
+    justify-content: space-around;
+  }
+  .edit_box button {
+    width: 80%;
+    font-size: 15px;
+  }
+  label {
+    margin: 10px 0;
+    font-size: 25px;
+  }
+  .datebox span {
+    font-size: 25px;
+  }
+  .info_about_element {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    top: 0 !important;
+  }
+}
