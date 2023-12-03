@@ -74,3 +74,28 @@
 a {
   text-decoration: none;
 }
+@media only screen and (max-width: 1080px) {
+  .task {
+    flex-direction: column;
+  }
+  .task .box,
+  .box_activity {
+    margin: 0;
+    font-size: 80px;
+    width: 38vh;
+    height: 38vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .task .box,
+  .box_activity {
+    font-size: 60px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .task .box,
+  .box_activity {
+    font-size: 30px;
+  }
+}

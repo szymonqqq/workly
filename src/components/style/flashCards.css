@@ -144,8 +144,9 @@ button {
 .flashCard_box .card h1 {
   color: black;
   text-align: center;
-  word-break: break-all;
+  /* word-break: break-all; */
   margin: 10px 0px 10px 10px;
+  text-transform: none;
 }
 .flashCard_box button {
   height: 5%;

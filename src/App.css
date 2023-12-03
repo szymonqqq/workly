@@ -57,6 +57,9 @@ nav h1 {
 }
 
 @media only screen and (max-width: 1080px) {
+  nav {
+    z-index: 2;
+  }
   nav ul li {
     width: 23%;
   }
@@ -113,6 +116,7 @@ nav h1 {
     padding: 0;
     margin: 0;
     animation: upMenu 0.5s ease;
+    z-index: 2;
   }
 
   @keyframes upMenu {

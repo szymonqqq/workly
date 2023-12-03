@@ -112,3 +112,75 @@
 .delete_note:hover {
   background-color: rgb(147, 18, 18);
 }
+
+@media only screen and (max-width: 1080px) {
+  .show_note button:nth-child(1) {
+    margin: 2% 5% 2% 0;
+  }
+  .note_data_box {
+    width: 90%;
+  }
+  .note_data_box h1 {
+    font-size: 75px;
+    width: 60%;
+  }
+  .note_data_box .dark div {
+    width: 35%;
+  }
+  .task_value p {
+    font-size: 50px;
+    margin: 4% 0;
+  }
+  .delete_note {
+    font-size: 70px;
+  }
+  .note_box {
+    width: 95%;
+  }
+  .note_box button {
+    font-size: 50px;
+  }
+  .show_note button:nth-child(1) {
+    font-size: 70px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .note_data_box h1 {
+    font-size: 55px;
+  }
+  .show_note button:nth-child(1) {
+    font-size: 60px;
+  }
+  .task_value p {
+    font-size: 40px;
+  }
+  .delete_note {
+    font-size: 45px;
+  }
+  .note_box button {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .note_data_box h1 {
+    font-size: 25px;
+    width: 50%;
+  }
+  .task_value p,
+  .delete_note {
+    font-size: 20px;
+  }
+  .note_data_box .dark {
+    flex-direction: row;
+  }
+  .delete_note {
+    width: 9vh;
+    height: 9vh;
+  }
+  .show_note button:nth-child(1) {
+    font-size: 35px;
+  }
+  .note_box button {
+    font-size: 20px;
+  }
+}

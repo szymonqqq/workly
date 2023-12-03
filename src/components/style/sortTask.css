@@ -40,3 +40,30 @@ select option {
   background-color: #fff;
   color: black;
 }
+@media only screen and (max-width: 1080px) {
+  .sort_box {
+    width: 85%;
+  }
+  .sort_box .dark {
+    width: 100%;
+  }
+  .sort_box select {
+    font-size: 35px;
+  }
+  .sort_box button {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sort_box {
+    height: 10vh;
+  }
+  .sort_box select {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .sort_box select {
+    font-size: 15px;
+  }
+}
