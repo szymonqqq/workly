@@ -57,11 +57,11 @@ const FlashCardKit = ({ data, setData, rotateCard }) => {
             >
               <FontAwesomeIcon icon={faArrowRight} rotation={180} />
             </button>
-            <p>{number}</p>
+            <p>{number + 1}</p>
 
             <button
               onClick={() => {
-                setNumber(number === data.length - 2 ? number : number + 1);
+                setNumber(number === data.length - 1 ? number : number + 1);
                 setPart(0);
               }}
               className="functional_button"

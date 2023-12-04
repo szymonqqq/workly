@@ -11,6 +11,7 @@ const FlashCardsTest = ({ data }) => {
     updatedInputValue[i] = e.target.value;
     setInputValue(updatedInputValue);
   };
+
   useEffect(() => {
     setElements(
       data.map((ele, i) => (

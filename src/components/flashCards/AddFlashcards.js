@@ -37,7 +37,7 @@ const AddFlashCards = () => {
     }
   }, [dbData]);
   const addCards = () => setCountCards(countCards + 1);
-  for (let i = 0; i < countCards; i++) {
+  for (let i = 0; i < data.length; i++) {
     cardElements.push(
       <div className="value_card_box" key={i}>
         <input
