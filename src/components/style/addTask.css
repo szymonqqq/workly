@@ -20,9 +20,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 4px solid white;
+  border: 2px solid white;
   height: 95%;
-  box-shadow: 8px 8px 0 rgba(0, 0, 0, 30%);
+  box-shadow: 9px 9px 0 rgba(0, 0, 0, 30%);
   background-image: radial-gradient(
     circle at 120.71% 50%,
     #7da7a3 0,
@@ -33,7 +33,6 @@
     #004a5c 83.33%,
     #003d54 100%
   );
-  border-radius: 2%;
   padding: 1% 0 2%;
 }
 h1 {
@@ -97,7 +96,7 @@ textarea {
 .button_box button {
   width: 50%;
   height: 100%;
-  background-color: #00adb5;
+  background-color: rgba(0, 0, 0, 30%);
   color: #eee;
   border: 2px solid #eee;
   font-size: 25px;
@@ -108,7 +107,7 @@ textarea {
 }
 .button_box button:hover {
   background-color: #fff;
-  color: #00adb5;
+  color: black;
 }
 p {
   font-size: 20px;
@@ -118,6 +117,10 @@ p {
 }
 .priority {
   line-height: 25px;
+}
+.task_box .calendar {
+  width: 60%;
+  margin: 4% 0 2%;
 }
 @media only screen and (max-width: 1080px) {
   .task_box {

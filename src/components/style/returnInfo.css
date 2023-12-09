@@ -44,3 +44,12 @@
     opacity: 0;
   }
 }
+@media only screen and (max-width: 1080px) {
+  .return_info {
+    width: 90%;
+    height: 10%;
+  }
+  .return_info h1 {
+    font-size: 40px;
+  }
+}

@@ -224,3 +224,9 @@ nav h1 {
     margin: 2% 4% 0 0;
   }
 }
+@media only screen and (max-width: 1080px) {
+  input,
+  textarea {
+    font-size: 30px !important;
+  }
+}

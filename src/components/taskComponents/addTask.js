@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../style/addTask.css';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import ReturnInfo from '../returnInfo';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendar, faCalendarXmark } from '@fortawesome/free-solid-svg-icons';
 const date = new Date();
 const setDate = new Date().toISOString().slice(0, 10);
 let tomorrow = new Date(date);
@@ -18,6 +19,7 @@ const AddTask = () => {
   const [description, setDescription] = useState('');
   const [message, setMessage] = useState('');
   const [cookies] = useCookies(['user_id']);
+  const [viewDate, setViewDate] = useState(false);
 
   const handleAddTask = async () => {
     if (taskName === '') return setMessage('Uzupełnij dane!');
@@ -29,8 +31,8 @@ const AddTask = () => {
         `${process.env.REACT_APP_API_URL}add_task`,
         {
           taskName: taskName,
-          startDate: startDate,
-          endDate: endDate,
+          startDate: viewDate ? startDate : 'brak',
+          endDate: viewDate ? endDate : 'brak',
           priority: priority,
           description: description ? description : 'Brak opisu',
           user_id: cookies.user_id,
@@ -60,19 +62,34 @@ const AddTask = () => {
           onChange={(e) => setTaskName(e.target.value)}
           placeholder="Nazwa..."
         />
-        <div className="datebox">
-          <input
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-          <span>-</span>
-          <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-        </div>
+        {viewDate && (
+          <div className="datebox">
+            <input
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+
+            <span>-</span>
+            <input
+              type="date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+          </div>
+        )}
+        <button
+          className="functional_button calendar"
+          onClick={() => {
+            setViewDate(!viewDate);
+          }}
+        >
+          {viewDate ? (
+            <FontAwesomeIcon icon={faCalendarXmark} />
+          ) : (
+            <FontAwesomeIcon icon={faCalendar} />
+          )}
+        </button>
         <label htmlFor="priority">
           <input
             type="checkbox"
@@ -80,7 +97,7 @@ const AddTask = () => {
             checked={priority}
             onChange={(e) => setPriority(e.target.checked)}
           />
-          <span className="priority">piorytet</span>
+          <span className="priority">ważne</span>
         </label>
         <textarea
           placeholder="Dodaj komentarz do zadania (pole nieobowiązkowe)"
