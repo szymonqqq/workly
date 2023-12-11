@@ -21,8 +21,12 @@
   color: white;
   background-color: rgba(0, 0, 0, 30%);
   font-size: 20px;
+  transition: 0.3s;
 }
-
+.account button:hover {
+  background-color: #fff;
+  color: black;
+}
 .account input {
   padding: 2% 0;
 }
@@ -34,6 +38,29 @@
 }
 .or_register {
   font-size: 25px;
+}
+.login_pass_box {
+  width: 70%;
+  display: flex;
+  height: 6vh;
+}
+.login_pass_box input {
+  width: 80%;
+  height: 100%;
+  border-right: none;
+}
+.account .login_pass_box button {
+  width: 20%;
+  margin-top: 0;
+  height: 100%;
+  border: 2px solid #00adb5;
+  border-left: none;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 95%);
+  color: black;
+}
+.account .login_pass_box button:hover {
+  font-size: 20px;
 }
 @media only screen and (max-width: 1366px) {
   label {

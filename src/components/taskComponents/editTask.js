@@ -54,14 +54,24 @@ const EditTask = ({ data, changeEdit, turnEdit }) => {
           checked={editPriority}
           onChange={(e) => setPriority(e.target.checked)}
         />
-        priorytet
+        ważne
       </label>
       <textarea
         placeholder="dodaj komentarz do zadania (pole nieobowiązkowe)"
         value={editDescription}
         onChange={(e) => setDescription(e.target.value)}
       ></textarea>
-      <button onClick={editValue}>Edytuj wartość</button>
+      <div>
+        <button onClick={editValue} className="functional_button">
+          Edytuj wartość
+        </button>
+        <button
+          onClick={() => changeEdit(!turnEdit)}
+          className="functional_button"
+        >
+          anuluj
+        </button>
+      </div>
     </div>
   );
 };
