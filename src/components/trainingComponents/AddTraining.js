@@ -49,6 +49,14 @@ const AddTraining = () => {
     generatePrevData();
   }, [optionValue[1]]);
 
+  useEffect(() => {
+    if (previousData.length === 1 && method === 'edit') {
+      setOptionValue([previousData[0].title, 0]);
+      setTitle(previousData[0].title);
+      setData(previousData[0].data);
+    }
+  }, [previousData]);
+
   const addData = async () => {
     try {
       const response = await axios.post(
@@ -86,6 +94,7 @@ const AddTraining = () => {
       <div className="training_box">
         <h1>Plan Treningowy</h1>
         {message && <ReturnInfo info={message} setMessage={setMessage} />}
+
         {method === 'add' ? (
           <button
             className="turn_edit functional_button"

@@ -47,6 +47,7 @@ const AddFlashCards = () => {
             newText[i][0] = e.target.value;
             setData(newText);
           }}
+          placeholder="pojęcie..."
           value={data[i][0] || ''}
         />
 
@@ -57,6 +58,7 @@ const AddFlashCards = () => {
             newText[i][1] = e.target.value;
             setData(newText);
           }}
+          placeholder="definicja..."
           value={data[i][1] || ''}
         />
       </div>
@@ -127,6 +129,7 @@ const AddFlashCards = () => {
             onChange={(e) => setTitle(e.target.value)}
             value={title}
             className="title"
+            placeholder="Nazwa zestawu..."
           />
           <button
             className="functional_button"

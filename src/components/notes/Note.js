@@ -61,6 +61,7 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
+          placeholder="nazwa..."
         />{' '}
         <button
           onClick={() => {
@@ -84,6 +85,7 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
+        placeholder="Opis..."
       ></textarea>
     </div>
   );

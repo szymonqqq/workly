@@ -46,7 +46,7 @@ const RenderLabelNote = ({
       </div>
     </div>
   ));
-  return <>{elements}</>;
+  return <>{datas.length ? elements : <h1>Brak dostępnych notatek</h1>}</>;
 };
 
 export default RenderLabelNote;
