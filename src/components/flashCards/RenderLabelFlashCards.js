@@ -33,6 +33,6 @@ const RenderLabelFlashCards = ({
       </div>
     </div>
   ));
-  return <>{elements}</>;
+  return <>{datas.length ? elements : <h1>Brak dostępnych zestawów</h1>}</>;
 };
 export default RenderLabelFlashCards;

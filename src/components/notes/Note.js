@@ -69,6 +69,7 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
             setData('');
             getNote();
           }}
+          className="functional_button"
         >
           <FontAwesomeIcon icon={faArrowRight} rotation={180} />
         </button>
@@ -78,6 +79,7 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
             getNote();
             data ? editData() : saveData();
           }}
+          className="functional_button"
         >
           <FontAwesomeIcon icon={faFloppyDisk} />
         </button>

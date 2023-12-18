@@ -2,7 +2,6 @@
   width: 60%;
   text-align: center;
   box-sizing: border-box;
-  margin-bottom: 5%;
 }
 .training_box .plan {
   display: flex;
@@ -16,7 +15,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   border-bottom: 2px solid #fff;
   background-image: radial-gradient(
     circle at 120.71% 50%,
