@@ -32,6 +32,16 @@ label {
   width: 25px;
   height: 25px;
 }
-
+@media only screen and (max-width: 1280px) {
+  .edit_box div {
+    width: 83%;
+  }
+  .edit_box button {
+    width: 47%;
+  }
+  .edit_box button {
+    font-size: 23px;
+  }
+}
 @media only screen and (max-width: 1080px) {
 }

@@ -103,6 +103,24 @@
   display: block;
   white-space: 'pre-line';
 }
+@media only screen and (max-width: 1280px) {
+  .task_box {
+    width: 45%;
+  }
+  .show_task_box {
+    width: 60%;
+  }
+  .task_value .dark .data {
+    width: 40%;
+  }
+  .dark .data button {
+    width: 9vh;
+    height: 9vh;
+  }
+  .dark {
+    padding: 15px;
+  }
+}
 @media only screen and (max-width: 1080px) {
   .task_value,
   .task_value .dark {

@@ -40,6 +40,14 @@ select option {
   background-color: #fff;
   color: black;
 }
+@media only screen and (max-width: 1280px) {
+  .sort_box {
+    width: 55%;
+  }
+  .sort_box .dark {
+    width: 50%;
+  }
+}
 @media only screen and (max-width: 1080px) {
   .sort_box {
     width: 85%;

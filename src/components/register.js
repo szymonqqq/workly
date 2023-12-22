@@ -41,14 +41,14 @@ const Register = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <label htmlFor="user_password">Powtórz hasło</label>{' '}
+        <label htmlFor="user_password">hasło</label>{' '}
         <input
           type="password"
           id="user_password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <label htmlFor="user_password2">Hasło</label>{' '}
+        <label htmlFor="user_password2">Powtórz Hasło</label>{' '}
         <input
           type="password"
           id="user_password2"

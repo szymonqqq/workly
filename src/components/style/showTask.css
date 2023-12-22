@@ -4,6 +4,11 @@
 .show_task_box h1 {
   text-align: center;
 }
+@media only screen and (max-width: 1280px) {
+  .show_task_box {
+    width: 55%;
+  }
+}
 @media only screen and (max-width: 1080px) {
   .show_task_box {
     width: 85%;

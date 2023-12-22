@@ -76,7 +76,17 @@
     margin-bottom: 5%;
   }
 }
-
+@media only screen and (max-width: 1280px) {
+  .account {
+    width: 45%;
+  }
+  .theme h1 {
+    margin-top: 5%;
+  }
+  .account button {
+    font-size: 22px;
+  }
+}
 @media only screen and (max-width: 1080px) {
   .account {
     width: 90%;
