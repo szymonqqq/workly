@@ -42,7 +42,12 @@ const Task = ({ data, fetchTasks }) => {
         {message && <ReturnInfo info={message} setMessage={setMessage} />}
 
         {isHovered && (
-          <div className="info_about_element" style={{ top: valueY }}>
+          <div
+            className="info_about_element"
+            style={
+              description.length < 200 ? { top: valueY } : { top: valueY - 200 }
+            }
+          >
             <div className="dark">
               <h1>Szczegółowe informacje</h1>
               <p>Data rozpoczęcia: {startDate}</p>

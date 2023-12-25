@@ -13,6 +13,8 @@ import AddTraining from './trainingComponents/AddTraining';
 import ShowNote from './notes/ShowNote';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import './style/nav.css';
+import MainPage from './MainPage';
 const Nav = ({ token, setToken }) => {
   const [device, setDevice] = useState('pc');
   const [menu, setMenu] = useState(false);
@@ -26,7 +28,10 @@ const Nav = ({ token, setToken }) => {
     <>
       <Router>
         <nav>
-          <h1>workly</h1>
+          <Link to="" className="link_to_main">
+            {' '}
+            <h1>workly</h1>{' '}
+          </Link>
           {device === 'mobile' && (
             <button
               onClick={() => setMenu(!menu)}
@@ -80,7 +85,7 @@ const Nav = ({ token, setToken }) => {
           <Route path="/main_panel" element={<MainPanel />} />
           <Route path="add_flashcards" element={<AddFlashCards />} />
           <Route path="/show_flashcards" element={<ShowFlashCards />} />
-
+          <Route path="" element={<MainPage />} />
           <Route
             path="/task_panel/task"
             element={<TaskPanel activity={['task', 'zadanie', 'zadania']} />}

@@ -82,12 +82,25 @@ label input {
   height: 25px;
   margin-right: 20px;
 }
-textarea {
+.description_box {
   width: 80%;
   height: 200px;
+  position: relative;
+}
+.description_box textarea {
+  width: 100%;
+  height: 100%;
   font-size: 20px;
   padding: 10px;
   resize: none;
+}
+.description_box p {
+  position: absolute;
+  bottom: 0;
+  color: black;
+  right: 1%;
+  margin: 0;
+  padding: 2px 0;
 }
 .button_box {
   width: 85%;

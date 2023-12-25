@@ -60,6 +60,7 @@ const EditTask = ({ data, changeEdit, turnEdit }) => {
         placeholder="dodaj komentarz do zadania (pole nieobowiązkowe)"
         value={editDescription}
         onChange={(e) => setDescription(e.target.value)}
+        maxLength={250}
       ></textarea>
       <div>
         <button onClick={editValue} className="functional_button">

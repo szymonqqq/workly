@@ -1,0 +1,17 @@
+.main_page {
+  width: 60%;
+  padding: 4% 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.main_page h1 {
+  font-size: 50px;
+  text-align: center;
+}
+.main_page a {
+  width: 50%;
+}
+.main_page a .functional_button {
+  width: 100%;
+}

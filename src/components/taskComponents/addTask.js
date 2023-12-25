@@ -99,11 +99,17 @@ const AddTask = () => {
           />
           <span className="priority">ważne</span>
         </label>
-        <textarea
-          placeholder="Dodaj komentarz do zadania (pole nieobowiązkowe)"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
+        <div className="description_box">
+          <textarea
+            placeholder="Dodaj komentarz do zadania (pole nieobowiązkowe)"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            maxLength={250}
+          >
+            {' '}
+          </textarea>
+          <p>{description.length}/250</p>
+        </div>
         <div className="button_box">
           <button onClick={handleAddTask}>dodaj</button>
           <button onClick={resetValue}>zresetuj pola</button>

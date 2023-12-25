@@ -99,7 +99,7 @@
   color: white;
   font-size: 25px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 2px solid #fff;
   background-color: rgba(0, 0, 0, 30%);
   cursor: pointer;
   transition: 0.2s;
