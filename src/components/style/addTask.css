@@ -84,7 +84,7 @@ label input {
 }
 .description_box {
   width: 80%;
-  height: 200px;
+  height: 20vh;
   position: relative;
 }
 .description_box textarea {

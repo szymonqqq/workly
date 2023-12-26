@@ -54,7 +54,7 @@ const AddTask = () => {
   return (
     <div className="theme">
       <div className="task_box">
-        {message && <ReturnInfo info={message} setMessage={setMessage} />};
+        {message && <ReturnInfo info={message} setMessage={setMessage} />}
         <h1>Dodaj zadanie</h1>
         <input
           type="text"

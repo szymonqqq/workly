@@ -12,7 +12,9 @@ const Note = ({ setShowNote, data, setData, getNote, setMessage }) => {
     title: title ? title : 'Bez tytułu',
     text: text ? text : ' ',
     date: date.toISOString().slice(0, 10),
-    hour: `${date.getHours()}:${date.getMinutes()}`,
+    hour: `${date.getHours()}:${
+      date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+    }`,
   });
 
   const saveData = async () => {

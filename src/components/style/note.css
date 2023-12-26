@@ -103,7 +103,9 @@
 .delete_note:hover {
   background-color: rgb(147, 18, 18);
 }
-
+.task_value p {
+  font-size: 30px;
+}
 @media only screen and (max-width: 1080px) {
   .show_note button:nth-child(1) {
     margin: 2% 5% 2% 0;
