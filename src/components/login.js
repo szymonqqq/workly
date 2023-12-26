@@ -5,11 +5,11 @@ import { useCookies } from 'react-cookie';
 import ReturnInfo from './returnInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import LoginBox from './LoginBox';
 const Login = () => {
   const [cookies, setCookie] = useCookies(['access_key', 'user_id']);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [showPass, setShowPass] = useState(false);
 
   const [info, setInfo] = useState('');
 
@@ -52,20 +52,7 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="user_password">Hasło</label>{' '}
-        <div className="login_pass_box">
-          <input
-            type={showPass ? 'text' : 'password'}
-            id="user_password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <button onClick={() => setShowPass(!showPass)}>
-            {showPass ? (
-              <FontAwesomeIcon icon={faEyeSlash} />
-            ) : (
-              <FontAwesomeIcon icon={faEye} />
-            )}
-          </button>
-        </div>
+        <LoginBox setPassword={setPassword} />
         <p className="or_register">
           Jeśli nie posiadasz konta <Link to="/register">kliknij</Link>{' '}
           {cookies.user}

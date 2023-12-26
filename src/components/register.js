@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import ReturnInfo from './returnInfo';
+import LoginBox from './LoginBox';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -9,7 +10,11 @@ const Register = () => {
   const [message, setMessage] = useState('');
   const handleRegister = async () => {
     if (!username) return setMessage('Podaj nazwę użytkownika!');
-    if (password !== password2) return setMessage('Hasła są niezgodne!');
+    else if (password !== password2) return setMessage('Hasła są niezgodne!');
+    else if (password.length < 8)
+      return setMessage(
+        'Hasła są za krótkie, hasło powinno składać się z conajmniej 8 znaków'
+      );
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}register`,
@@ -31,7 +36,7 @@ const Register = () => {
   return (
     <div className="theme">
       {console.log(message)}
-      {message && <ReturnInfo message={message} setMessage={setMessage} />}
+      {message && <ReturnInfo info={message} setMessage={setMessage} />}
       <h1 className="register_name">Rejestracja</h1>
       <div className="account">
         <label htmlFor="username">Nazwa użytkownika</label>{' '}
@@ -42,19 +47,9 @@ const Register = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="user_password">hasło</label>{' '}
-        <input
-          type="password"
-          id="user_password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <LoginBox setPassword={setPassword} />
         <label htmlFor="user_password2">Powtórz Hasło</label>{' '}
-        <input
-          type="password"
-          id="user_password2"
-          value={password2}
-          onChange={(e) => setPassword2(e.target.value)}
-        />
+        <LoginBox setPassword={setPassword2} />
         <button type="button" className="button_link" onClick={handleRegister}>
           Zarejestruj
         </button>
