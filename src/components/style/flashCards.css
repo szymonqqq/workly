@@ -137,6 +137,40 @@ button {
   overflow: auto;
   cursor: pointer;
 }
+.rotateCardR {
+  animation: rotateCard 0.5s ease-in-out;
+  transform: rotateX(0deg);
+}
+
+.rotateCardL {
+  animation: rotateCardL 0.5s ease-in-out;
+  transform: rotateX(0deg);
+}
+
+@keyframes rotateCard {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes rotateCardL {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
 ::-webkit-scrollbar {
   border-radius: 38px;
 }
@@ -202,16 +236,36 @@ button {
   width: 10%;
   text-align: center;
 }
-.card_data_box .dark {
+.card_data_box .dark,
+.card_data_box .dark div {
   justify-content: space-between;
 }
-.card_data_box .delete_note {
+.card_data_box .delete_note,
+.card_data_box .dark a button {
   font-size: 30px;
-  width: 8vh;
+  width: 45%;
   height: 8vh;
-  align-self: right;
+  transition: 0.3s;
+  cursor: pointer;
 }
-
+.card_data_box .dark a button:hover {
+  background-color: rgb(54, 86, 181);
+}
+.card_data_box .dark a {
+  align-self: right;
+  width: 45%;
+}
+.card_data_box .dark div {
+  display: flex;
+  align-self: right;
+  width: 30%;
+}
+.card_data_box .dark a button {
+  width: 100%;
+  background-color: royalblue;
+  border: 2px solid white;
+  color: white;
+}
 @media only screen and (max-width: 1080px) {
   .flash_cards {
     width: 95%;

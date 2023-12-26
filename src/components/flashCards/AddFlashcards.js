@@ -111,13 +111,18 @@ const AddFlashCards = () => {
                 setSelectedIndex(e.target.selectedIndex);
               }}
             >
-              {dbData.map((e, index) => (
-                <option key={index}>{e.title}</option>
-              ))}
+              {dbData.length
+                ? dbData.map((e, index) => (
+                    <option key={index}>{e.title}</option>
+                  ))
+                : setMethod('add')}
             </select>
           ) : (
             <button
-              onClick={() => setMethod('edit')}
+              onClick={() => {
+                getFlashCards(cookies.user_id, setDbData);
+                setMethod('edit');
+              }}
               className="functional_button edit_btn"
             >
               <FontAwesomeIcon icon={faPenToSquare} />

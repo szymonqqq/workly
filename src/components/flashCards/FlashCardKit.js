@@ -34,10 +34,10 @@ const FlashCardKit = ({ data, setData, rotateCard }) => {
       {turnTest && (
         <>
           <div
-            onClick={() => {
+            onClick={(e) => {
               part === 1 ? setPart(0) : setPart(1);
             }}
-            className="card"
+            className={`card ${part === 1 ? 'rotateCardR' : 'rotateCardL'}`}
           >
             <h1>{word}</h1>
           </div>

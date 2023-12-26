@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 const RenderLabelFlashCards = ({
   datas,
   setData,
@@ -24,12 +24,20 @@ const RenderLabelFlashCards = ({
     <div key={index} className="task_value card_data_box ">
       <div className="dark">
         <h1 onClick={() => setData(datas[index])}>{data.title}</h1>
-        <button
-          onClick={() => deleteFlashCard(data._id)}
-          className="delete_note"
-        >
-          <FontAwesomeIcon icon={faTrash} />
-        </button>
+        <div>
+          <button
+            onClick={() => deleteFlashCard(data._id)}
+            className="delete_note"
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </button>
+
+          <Link to="../add_flashcards">
+            <button onClick={() => {}} className="edit_note">
+              <FontAwesomeIcon icon={faPenToSquare} />
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   ));
