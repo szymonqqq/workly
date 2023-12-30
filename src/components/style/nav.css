@@ -49,22 +49,6 @@ nav h1 {
   margin: auto;
   padding-left: 15%;
 }
-
-@media only screen and (max-width: 1080px) {
-  nav {
-    z-index: 2;
-  }
-  nav ul li {
-    width: 23%;
-  }
-  nav ul {
-    justify-content: flex-end;
-    margin-right: 15%;
-  }
-  nav h1 {
-    padding-left: 8%;
-  }
-}
 @media only screen and (max-width: 1366px) {
   nav h1 {
     margin: 0;
@@ -88,6 +72,53 @@ nav h1 {
     margin: 0;
   }
 }
+@media only screen and (max-width: 1280px) {
+  .link_to_main {
+    margin: 0;
+    padding-left: 5%;
+  }
+  nav {
+    padding: 3%;
+  }
+  nav ul li {
+    width: 20%;
+  }
+  li a {
+    font-size: 26px;
+  }
+  .theme h1 {
+    margin: 5% 0 2%;
+
+    font-size: 52px;
+  }
+  .account input,
+  .login_pass_box {
+    height: 7vh;
+  }
+  label {
+    margin: 25px;
+    font-size: 28px;
+  }
+  .account button {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  nav {
+    z-index: 2;
+  }
+  nav ul li {
+    width: 23%;
+  }
+  nav ul {
+    justify-content: flex-end;
+    margin-right: 15%;
+  }
+  nav h1 {
+    padding-left: 8%;
+  }
+}
+
 @media only screen and (max-width: 1080px) {
   nav h1 {
     z-index: 3;

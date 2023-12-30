@@ -6,6 +6,7 @@ import {
   faRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import FlashCardScore from './FlashCardScore';
+import ShowAllWords from './ShowAllWords';
 
 const Card = ({ data, rotateCard, setData, test }) => {
   const [part, setPart] = useState(0);
@@ -117,6 +118,7 @@ const Card = ({ data, rotateCard, setData, test }) => {
       <button onClick={() => setData([])} className="functional_button">
         <FontAwesomeIcon icon={faBackward} />
       </button>
+      <ShowAllWords data={data} />
     </>
   );
 };

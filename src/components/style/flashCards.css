@@ -305,6 +305,30 @@ button {
   height: 100%;
   background-color: black;
 }
+.flashCard_box table {
+  width: 80%;
+  margin: 5% 0;
+  border: 1px solid white;
+}
+.flashCard_box table tr {
+  height: 8vh;
+}
+.flashCard_box table tr,
+td {
+  font-size: 20px;
+  color: white;
+  border: 1px solid white;
+}
+@media only screen and (max-width: 1280px) {
+  .card_data_box {
+    width: 50%;
+    height: 12vh;
+  }
+  .card_data_box .dark h1 {
+    line-height: 1vh;
+  }
+}
+
 @media only screen and (max-width: 1080px) {
   .flash_cards {
     width: 95%;

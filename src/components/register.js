@@ -47,9 +47,9 @@ const Register = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="user_password">hasło</label>{' '}
-        <LoginBox setPassword={setPassword} />
+        <LoginBox setPassword={setPassword} id={'user_password'} />
         <label htmlFor="user_password2">Powtórz Hasło</label>{' '}
-        <LoginBox setPassword={setPassword2} />
+        <LoginBox setPassword={setPassword2} id={'user_password2'} />
         <button type="button" className="button_link" onClick={handleRegister}>
           Zarejestruj
         </button>

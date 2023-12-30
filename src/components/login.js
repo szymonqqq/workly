@@ -52,7 +52,7 @@ const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <label htmlFor="user_password">Hasło</label>{' '}
-        <LoginBox setPassword={setPassword} />
+        <LoginBox setPassword={setPassword} id={'user_password'} />
         <p className="or_register">
           Jeśli nie posiadasz konta <Link to="/register">kliknij</Link>{' '}
           {cookies.user}
